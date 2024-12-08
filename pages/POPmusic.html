@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese popular music</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .year-selector, .song-list {
+            width: 45%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="year-selector">
+            <h2>select year:</h2>
+            <select id="yearSelect">
+                <!-- 年份选项将通过JavaScript动态生成 -->
+            </select>
+        </div>
+        <div class="song-list">
+            <h2>10 of most popular musics:</h2>
+            <ul id="songList">
+                <!-- 歌曲列表将通过JavaScript动态更新 -->
+            </ul>
+        </div>
+    </div>
+    <audio id="audioPlayer" controls style="display: none;"></audio> <!-- 音频播放器，初始设置为隐藏 -->
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSelect = document.getElementById('yearSelect');
+            const songList = document.getElementById('songList');
+            const audioPlayer = document.getElementById('audioPlayer');
+        
+            // 动态生成年份选项
+            for (let year = new Date().getFullYear() - 10; year <= new Date().getFullYear(); year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            }
+        
+            // 假设已经有了访问令牌
+            const accessToken = 'BQCFBVR46xCt2kL1-sxmjbG0Ii5OHX6c6AzCxOFEYllyvUVYkrSbaST0QOspQmXHqwSMqrhNimGOdMtlQXirGZEbPgInAY_6tgyexWvLo3xcRqJYEZJRguqxse5YC4j1ghBSQCeZzmuB_huFo_xcowZalfypRlgfixgDZTpnJboyvwe23dx7_jzojOfxSYCFbhFVJ1sXqsdzPB9aA6RffKsUSLE1ayDoQ2Xc';
+        
+            // 监听年份选择变化
+            yearSelect.addEventListener('change', function() {
+                const selectedYear = this.value;
+                fetchTopSongs(selectedYear, accessToken);
+            });
+        
+            // 获取并显示热门歌曲
+            async function fetchTopSongs(year, token) {
+                try {
+                    const response = await fetch(`https://api.spotify.com/v1/search?q=year:${year}&type=track&limit=10`, {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    const data = await response.json();
+                    songList.innerHTML = ''; // 清空当前列表
+                    const tracks = data.tracks.items;
+                    tracks.forEach(track => {
+                        const li = document.createElement('li');
+                        li.textContent = track.name;
+                        li.addEventListener('click', function() {
+                            playSong(track.preview_url); // 点击时播放对应的歌曲
+                        });
+                        songList.appendChild(li);
+                    });
+                } catch (error) {
+                    console.error('Error fetching top songs:', error);
+                }
+            }
+        
+            // 播放指定URL的歌曲
+            function playSong(songUrl) {
+                audioPlayer.src = songUrl;
+                audioPlayer.play();
+                audioPlayer.style.display = 'block'; // 显示音频播放器
+            }
+        });
+    </script>
+</body>
+
+</html>

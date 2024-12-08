@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>热门电影年份选择器</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .year-selector, .movie-list {
+            width: 45%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="year-selector">
+            <h2>选择年份:</h2>
+            <select id="yearSelect">
+                <!-- 年份选项将通过JavaScript动态生成 -->
+            </select>
+        </div>
+        <div class="movie-list">
+            <h2>热门电影:</h2>
+            <ul id="movieList">
+                <!-- 电影列表将通过JavaScript动态更新 -->
+            </ul>
+        </div>
+    </div>
+    <video id="videoPlayer" controls style="display: none;"></video> <!-- 视频播放器，初始设置为隐藏 -->
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSelect = document.getElementById('yearSelect');
+            const movieList = document.getElementById('movieList');
+            const videoPlayer = document.getElementById('videoPlayer');
+        
+            // 动态生成年份选项
+            for (let year = new Date().getFullYear() - 10; year <= new Date().getFullYear(); year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            }
+        
+            // TMDb API配置
+            const apiKey = 'f2d388b8d2a31d0e05e81895f483660f'; // 替换为你的TMDb API密钥
+            const apiUrl = 'https://api.themoviedb.org/3/discover/movie';
+        
+            // 监听年份选择变化
+            yearSelect.addEventListener('change', function() {
+                const selectedYear = this.value;
+                fetchTopMovies(selectedYear, apiKey);
+            });
+        
+            // 获取并显示热门电影
+            async function fetchTopMovies(year, apiKey) {
+                try {
+                    const response = await fetch(`${apiUrl}?primary_release_year=${year}&sort_by=popularity.desc&vote_count.gte=500&with_genres=action|adventure|comedy|drama|fantasy|horror|math-fic|musical|mystery|romance|sci-fi|thriller|war|western&with_runtime.gte=60&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&with_original_language=en&api_key=${apiKey}`);
+                    const data = await response.json();
+                    movieList.innerHTML = ''; // 清空当前列表
+                    const movies = data.results.slice(0, 10); // 获取前10部电影
+                    movies.forEach(movie => {
+                        const li = document.createElement('li');
+                        li.textContent = movie.title;
+                        li.addEventListener('click', function() {
+                            playMovie(movie.key); // 点击时播放对应的预告片
+                        });
+                        movieList.appendChild(li);
+                    });
+                } catch (error) {
+                    console.error('Error fetching top movies:', error);
+                }
+            }
+        
+            // 播放指定URL的电影预告片
+            function playMovie(trailerKey) {
+                if (trailerKey) {
+                    const trailerUrl = `https://www.youtube.com/embed/${trailerKey}`;
+                    videoPlayer.src = trailerUrl;
+                    videoPlayer.play();
+                    videoPlayer.style.display = 'block'; // 显示视频播放器
+                } else {
+                    console.warn('No trailer available for this movie.');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
