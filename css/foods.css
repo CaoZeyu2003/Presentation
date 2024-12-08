@@ -1,0 +1,17 @@
+.title {
+    height: 150;
+    width: 800;
+    font-size: large;
+    align-self: center;
+}
+
+body {
+    background-image: url('../images/foods__.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}

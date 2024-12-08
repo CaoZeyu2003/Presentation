@@ -1,0 +1,10 @@
+body {
+    background-image: url('../images/memes_back.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}

@@ -1,0 +1,15 @@
+body {
+    background-image: url('../images/game_back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+h3 {
+    color: yellow;
+    text-align: center;
+}

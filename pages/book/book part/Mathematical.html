@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical</title>
+     <link rel="stylesheet" href="../css/Mathematical.css">
+</head>
+<body>
+    <div class="title">
+    <h1 align="center">Mathematical</h1>
+    <link rel="stylesheet" href="../../../css/Mathematical.css">
+     <style>        #detail1 {
+            display: none;
+        }
+     </style>
+    <style>        #detail2 {
+            display: none;
+        }
+     </style>
+    </div>
+<tr>
+         <td>
+            <h3><span class="book-title">(Nine Chapters on the Mathematical Arithmetic)
+            </span> Author:<span class="author-name">Unknown</span></h3>
+         </td>
+         <td>
+        <img src="../../../images/九章算术.png" alt="123"width="500",height="600">
+     <body>
+    <div id="Mathematical-detail1">
+        <h3 id="summary">The Nine Chapters on the Mathematical Art is the first mathematical...
+        </h3>
+        <button id="toggleButton">Read more</button>
+        <div id="detail1">
+            <p>
+               <h3>The Nine Chapters on the Mathematical Art is the first mathematical monograph in ancient China. It was written around the first century AD and was supplemented and edited by Zhang Cang, Geng Shouchang and others in the Western Han Dynasty. The book is divided into nine chapters, including Fangtian (calculation of the area of ​​plane geometric figures), Sumi (proportional conversion of grains), Shuaifen (proportional distribution problems), Shaoguang (problems such as inverse calculation of side lengths with known areas and volumes), Shanggong (earthworks and volume calculations), Junshu (rational distribution of taxes), Yingbuqi (profit and loss problems), Equations (solutions of multivariate linear equations), Pythagorean theorem (application of the Pythagorean theorem), etc., covering all aspects of social production and life at that time.
+            The Nine Chapters on the Mathematical Art systematically summarizes the mathematical achievements of the Warring States, Qin and Han dynasties, and occupies an important position in the history of mathematics.
+        </h3>
+
+            </p>
+        </div>
+    </div>
+     <script>        document.getElementById('toggleButton').addEventListener('click', function() {
+            var detail1 = document.getElementById('detail1');
+            var summary = document.getElementById('summary');
+            var button = document.getElementById('toggleButton');
+
+            if (detail1.style.display === 'none') {
+                detail1.style.display = 'block';
+                summary.style.display = 'none';
+                button.textContent = 'Retract';
+            } else {
+                detail1.style.display = 'none';
+                summary.style.display = 'block';
+                button.textContent = 'Read more';
+            }
+        });
+    </script>
+     <tr>
+         <td>
+            <h3><span class="book-title">(Zhoubi Suanjing)
+                 </span> Author:<span class="author-name">Unknown</span></h3>
+         </td>
+         <td>
+        <img src="../../../images/周髀算经.png" alt="123", width="650" height="400">
+     <body>
+    <div id="Mathematical-detail2">
+        <h3 id="summary2">The Zhoubi Suanjing, originally named Zhoubi, is an ancient Chinese work on mathematics and astronomy ...
+        </h3>
+        <button id="toggleButton2">Read more</button>
+        <div id="detail2">
+            <p>
+               <h3>The Zhoubi Suanjing, originally named Zhoubi, is an ancient Chinese work on mathematics and astronomy. It was written around 100 BC and annotated by Zhao Junqing, a mathematician from the Han Dynasty, Zhen Luan, a mathematician from the Northern Zhou Dynasty, and Li Chunfeng, an astronomer and mathematician from the Tang Dynasty.
+        </h3>
+            <h3>
+                In terms of mathematics, Zhoubi mainly records the mathematical achievements of the Han Dynasty. It was the first to propose the Pythagorean theorem, which is important in geometry, and gave the general formula of the Pythagorean theorem in the method of measuring the height of the sun[2].
+
+Zhoubi contains a sun height map drawn using the method of weight difference, but the method is not explained in detail. During the Three Kingdoms period, Zhao Shuang and Liu Hui conducted further research and made it the core content of ancient Chinese meteorological theory[2].
+
+In Zhoubi, Zhou means circle and Bi means leg. The above records the conversation between Zhou Gong and Shang Gao, which contains the earliest written record of the Pythagorean theorem, namely "the hypotenuse is three times the leg, the chord is four times the sine, and the sine is five", also known as the Shang Gao theorem[4]. In fact, this theorem should be moved back in time.
+            </h3>
+
+            </p>
+        </div>
+    </div>
+     <script>        document.getElementById('toggleButton2').addEventListener('click', function() {
+            var detail2 = document.getElementById('detail2');
+            var summary2 = document.getElementById('summary2');
+            var button = document.getElementById('toggleButton2');
+
+            if (detail2.style.display === 'none') {
+                detail2.style.display = 'block';
+                summary2.style.display = 'none';
+                button.textContent = 'Retract';
+            } else {
+                detail2.style.display = 'none';
+                summary2.style.display = 'block';
+                button.textContent = 'Read more';
+            }
+        });
+    </script>
+</body>
+</html>

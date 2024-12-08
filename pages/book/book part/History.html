@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+     <link rel="stylesheet" href="../css/History.css">
+</head>
+<body>
+<div class="title">
+    <h1 align="center">History</h1>
+    <link rel="stylesheet" href="../../../css/History.css">
+     <style>        #detail1 {
+            display: none;
+        }
+     </style>
+    <style>        #detail2 {
+            display: none;
+        }
+     </style>
+    <style>        #detail3 {
+            display: none;
+        }
+     </style>
+</div>
+<div class="context">
+    <div style="border: 2px solid #3498db; padding: 20px; background-color: #ecf0f1; font-size: 1.4em; color: #2c3e50;">
+    <p>
+        <span style="font-size: 1.5em; font-weight: bold;">Introduce:</span> From the first clarion call of ancient civilization, Chinese history has gone through a long and intriguing process of 5,000 years, during which there have been both prosperity and glory, as well as twists and turns and difficulties. The accumulation of past history has forged today's splendid modern civilization. This interface recommends some books about Chinese history
+    </p>
+</div>
+    <tr>
+         <td>
+            <h3><span class="book-title">(Modern History of China)
+            </span> Author:<span class="author-name">Jiang Tinghuang</span></h3>
+         </td>
+         <td>
+        <img src="../../../images/中国近代史.png" alt="123"width="500",height="600">
+     <body>
+    <div id="History-detail1">
+        <h3 id="summary">China's modern history is a period of history from the Opium...
+        </h3>
+        <button id="toggleButton">Read more</button>
+        <div id="detail1">
+            <p>
+               <h3>China's modern history is a period of history from the Opium War in 1840 to the founding of the People's Republic of China in 1949. During this period, China suffered from the invasion of foreign powers and gradually became a semi-colonial and semi-feudal society. In order to resist foreign aggression and feudal oppression, the Chinese people carried out many revolutions and reforms, including the Westernization Movement, the Reform Movement of 1898, and the Revolution of 1911. After the founding of the Communist Party of China, it led the Chinese people in the New Democratic Revolution, and eventually overthrew the rule of imperialism, feudalism and bureaucratic capitalism and established a new China. This period of history was full of twists and turns and hardships, but the Chinese people have always been indomitable and have worked hard to achieve national independence and people's liberation.
+        </h3>
+
+            </p>
+        </div>
+    </div>
+     <script>        document.getElementById('toggleButton').addEventListener('click', function() {
+            var detail1 = document.getElementById('detail1');
+            var summary = document.getElementById('summary');
+            var button = document.getElementById('toggleButton');
+
+            if (detail1.style.display === 'none') {
+                detail1.style.display = 'block';
+                summary.style.display = 'none';
+                button.textContent = 'Retract';
+            } else {
+                detail1.style.display = 'none';
+                summary.style.display = 'block';
+                button.textContent = 'Read more';
+            }
+        });
+    </script>
+     <tr>
+         <td>
+            <h3><span class="book-title">(Ancient Chinese History)
+            </span> Author:<span class="author-name">Zhu Shaohou</span></h3>
+         </td>
+         <td>
+        <img src="../../../images/中国古代史.png" alt="123", width="450" height="500">
+     <body>
+    <div id="History-detail2">
+        <h3 id="summary2">The content of "Ancient Chinese History" can be roughly ...
+        </h3>
+        <button id="toggleButton2">Read more</button>
+        <div id="detail2">
+            <p>
+               <h3>The content of "Ancient Chinese History" can be roughly summarized into the following aspects:
+        </h3>
+            <h3>
+                Prehistoric period: introduces the origin and evolution of human beings, as well as the production methods and social organizations of primitive society.
+            </h3>
+            <h3>
+                Slave society: mainly describes the politics, economy, and culture of the Xia, Shang, and Zhou dynasties, including social systems such as the feudal system, the well-field system, and the patriarchal system, as well as the emergence and development of characters such as oracle bone inscriptions and bronze inscriptions.
+            </h3>
+            <h3>
+                Feudal society: covers the Spring and Autumn Period and the Warring States Period, the Qin and Han Dynasties, the Three Kingdoms, the Jin Dynasty, the Southern and Northern Dynasties, the Sui and Tang Dynasties, the Five Dynasties and Ten Kingdoms, the Song, Yuan, Ming, and Qing Dynasties, involving the replacement of dynasties, the evolution of political systems, the development of social economy, and the prosperity of culture.
+            </h3>
+            <h3>
+                In summary, "Ancient Chinese History" comprehensively displays the development process of politics, economy, and culture in ancient Chinese society.
+            </h3>
+            </p>
+        </div>
+    </div>
+     <script>        document.getElementById('toggleButton2').addEventListener('click', function() {
+            var detail2 = document.getElementById('detail2');
+            var summary2 = document.getElementById('summary2');
+            var button = document.getElementById('toggleButton2');
+
+            if (detail2.style.display === 'none') {
+                detail2.style.display = 'block';
+                summary2.style.display = 'none';
+                button.textContent = 'Retract';
+            } else {
+                detail2.style.display = 'none';
+                summary2.style.display = 'block';
+                button.textContent = 'Read more';
+            }
+        });
+    </script>
+     <tr>
+         <td>
+            <h3><span class="book-title">(Historical records)
+            </span> Author:<span class="author-name">Sima Qian</span></h3>
+
+         </td>
+         <img src="../../../images/史记.png" alt="123", width="350" height="400">
+         <h3 style="font-size: 24px; color: blue;">Introduce:</h3>
+      <div id="History-detail3">
+          <h3 id="summary3">The without doubt that the Historical records is the number one history book of China...
+        </h3>
+        <button id="toggleButton3">Show More Detail</button>
+         <div id="detail3">
+            <h3>
+                The without doubt that the Historical records is the number one history book of China."Historical Records", the earliest known as "Taishi Gongshu" or "Taishi Gongji", is a chronicle of the history of Sima Qian (Taishi Gong), who served as Taishi Ling during the period of Emperor Wu of the Western Han Dynasty, recorded from legendsThe 2,500-year history of China from the Yellow Emperor to the early years of Emperor Wu of the Han Dynasty is collectively known as the "First Four History" together with the later "Book of Han", "Book of the Later Han" and "Chronicles of the Three Kingdoms". [cf. 1] The book includes 12 volumes of the Honki, 30 volumes of the family, 70 volumes of the biography, 10 volumes of the table, and 8 volumes, with a total of 130 volumes and more than 526,500 characters. The original manuscript of the book was lost at the end of the Western Han Dynasty, and the oldest surviving fragment of historical records is the manuscript of the Six Dynasties of China in the collection of Kozanji Temple in Kyoto, Japan; The oldest surviving complete historical record is the Northern Song Dynasty "Jing Yu Ben" "Historical Records Collection" (15 volumes of which are supplemented by other editions) and the Japanese Tibetan and Southern Song Dynasty version of Huang Shanfu's "Commentary" in the Institute of History and Linguistics of the Academia Sinica in TaiwanHistorical Records of the Three Families Note.
+            </h3>
+
+         </div>
+          <script>        document.getElementById('toggleButton3').addEventListener('click', function() {
+            var detail3 = document.getElementById('detail3');
+            var summary3 = document.getElementById('summary3');
+            var button = document.getElementById('toggleButton3');
+
+            if (detail3.style.display === 'none') {
+                detail3.style.display = 'block';
+                summary3.style.display = 'none';
+                button.textContent = 'Show Less';
+            } else {
+                detail3.style.display = 'none';
+                summary3.style.display = 'block';
+                button.textContent = 'Show More Detail';
+            }
+        });
+    </script>
+      </div>
+    </tr>
+    <tr>
+</body>
+</html>

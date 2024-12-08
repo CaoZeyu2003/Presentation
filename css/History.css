@@ -1,0 +1,116 @@
+/* books.css */
+.custom-button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px; /* 可选 */
+}
+.book-title {
+        font-size: 35px; /* 设定字体大小 */
+        color: red; /* 设定字体颜色 */
+        font-weight: bold; /* 可选：设置字体加粗 */
+    }
+.author-name {
+    font-size: 16px; /* 设定字体大小 */
+    color: blue; /* 设定字体颜色 */
+}
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+}
+
+.custom-button:active {
+    background-color: #004085;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.title {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.context {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.context table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.context td {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.context article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.context img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.context h3.introduce {
+    font-size: 24px;
+    color: blue;
+    margin-top: 20px;
+}
+
+.context p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .context {
+        width: 90%;
+    }
+
+    .context img {
+        width: 100%;
+    }
+}
+body {
+    background-image: url('../images/History.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.content {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+

@@ -1,0 +1,370 @@
+* {
+    /*表示对所有区域都生效*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*  box-sizing: border-box就是将border和padding数值包含在width和height之内，这样的好处就是修改border和padding数值盒子的大小不变。 */
+}
+
+header
+
+/*设置header区域内的样式*/
+    {
+    z-index: 999;
+    /*z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*width: 100%;表示此区域宽度是其父区域宽度的100%*/
+    display: flex;
+    /*flex 是 Flexible Box 的缩写，就是弹性盒子布局的意思*/
+    justify-content: space-between;
+    /*justify-content 用于设置或检索弹性盒子元素在水平方向上的对齐方式；space-between是两端对齐*/
+    align-items: center;
+    /*align-items是垂直方向的对齐方式，*/
+    padding: 30px 200px;
+    /*padding: 30px 200px表示上下内边距30单位px,左右内边距200单位px*/
+    transition: 0.5s ease;
+    /*ease表示逐渐变慢*/
+}
+
+header .brand
+
+/*设置brand类的样式*/
+    {
+    color: #fff;
+    font-size: 3.0em;
+    font-weight: 1000;
+    text-transform: uppercase;
+    /* 把文字转化为大写 */
+    text-decoration: none;
+}
+
+header .navigation
+
+/*设置navigation类的样式*/
+    {
+    position: relative;
+}
+
+header .navigation .navigation-items a
+
+/*设置navigation-items类中所有a部分的样式*/
+    {
+    position: relative;
+    color: #fff;
+    font-size: 2em;
+    /* 1em = ? px 由该节点的父元素的font-size决定。 */
+    font-weight: 800;
+    /* 字体粗细 */
+    text-decoration: none;
+    /* 字体无任何装饰，即取消字体下的下划线 */
+    margin-left: 30px;
+    /* 左边距为30px */
+    transition: 2.3s ease;
+    /*ease表示逐渐变慢*/
+}
+
+header .navigation .navigation-items a:before
+
+/*设置navigation-items类中所有a部分前面样式*/
+    {
+    content: '';
+    position: absolute;
+    background: #fff;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 2.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before
+
+/*设置navigation-items类中所有a部分前面,鼠标悬浮时的样式*/
+    {
+    width: 100%;
+}
+
+section
+
+/* 设置section部分的样式 */
+    {
+    padding: 100px 200px;
+}
+
+.home
+
+/* 设置home类的样式 */
+    {
+    position: relative;
+    width: 100;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #2696e9;
+}
+
+.home::before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home .content
+
+/* 设置content类的样式 */
+    {
+    z-index: 888;
+    color: #fff;
+    width: 100%;
+    margin-top: 50px;
+    display: none;
+}
+
+.home .content.active {
+    display: block;
+}
+
+
+.home .content h1
+
+/* 设置content类的样式 */
+    {
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+
+.home .content p
+
+/* 设置content类中p的样式 */
+    {
+    font-size: 1.5em;
+    margin-bottom: 65px;
+}
+
+.home .content a
+
+/* 设置content类中a的样式 */
+    {
+    background: #fff;
+    padding: 15px 25px;
+    color: #1680ac;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.home .media-icons
+
+/* 设置meida-icons类的样式 */
+    {
+    z-index: 888;
+    position: absolute;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: 2.3s ease;
+}
+
+.home .media-icons .telephone
+
+/* 设置meida-icons类的样式 */
+    {
+    width: 45px;
+    height: 45px;
+}
+
+.home .media-icons .wechat
+
+/* 设置meida-icons类的样式 */
+    {
+    width: 45px;
+    height: 45px;
+}
+
+.home .media-icons .qq
+
+/* 设置meida-icons类的样式 */
+    {
+    width: 45px;
+    height: 45px;
+}
+
+.home .media-icons a
+
+/* 设置meida-icons类中a的样式 */
+    {
+    font-size: 1.6em;
+}
+
+.home .media-icons a:not(:last-child)
+
+/* 设置meida-icons类中a的样式;而:not(:last-child)作用是设置除最后一个以外其他的元素样式 */
+    {
+    margin-bottom: 20px;
+}
+
+.home .media-icons a:hover
+
+/* 设置meida-icons类中a，当鼠标悬浮时的样式 */
+    {
+    transform: scale(1.3);
+}
+
+.home video
+
+/* 设置视频的样式 */
+    {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* object-fit 属性指定元素的内容应该如何去适应指定容器的高度与宽度。而cover则表示保持原有视频比例 */
+}
+
+.slider-navigation
+
+/*  设置slider-navigation类的样式 */
+    {
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn
+
+/*  设置导航按钮.nav-btn类的样式 */
+    {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 1.3s ease;
+}
+
+.slider-navigation .nav-btn.active
+
+/* 设置当导航按钮处于active激活状态时的样式 */
+    {
+    background: #2696e9;
+}
+
+.slider-navigation .nav-btn:not(:last-child) {
+    margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover {
+    transform: scale(1.5);
+    /* 放大1.5倍 */
+}
+
+.video-slide {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 70%);
+}
+
+.video-slide.active {
+    clip-path: circle(100.0% at 0 50%);
+    /* clip-path CSS 属性可以创建一个只有元素的部分区域可以显示的剪切区域 ； circle(150.0% at  0 50%)表示圆形的半径是元素的150%，位于元素的水平0%，垂直50%的位置 */
+    transition: 2s ease;
+    transition-property: clip-path;
+    /* transition-property是过渡属性，元素从一种样式变换为另一种样式时添加过渡效果。 */
+}
+
+@media(max-width:1040px)
+
+/* 当网页缩小至宽度1040以下时的页面样式设置 */
+    {
+    header {
+        padding: 12px 20px;
+    }
+
+    section {
+        padding: 100px 20px;
+    }
+
+    .home .media-icons {
+        right: 15px;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    header .navigation.active {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(1, 1, 1, 0.5);
+    }
+
+    header .navigation .navigation-items a {
+        color: #222;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+
+    header .navigation .navigation-items a::before {
+        background: #222;
+        height: 5px;
+
+    }
+
+    header .navigation.active .navigation-items {
+        background: #fff;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+
+    }
+
+    .menu_btn {
+        background: url(menu.png)no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .menu_btn.active {
+        z-index: 999;
+        background: url(close.png)no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: 0.3s ease;
+    }
+}
